@@ -205,8 +205,6 @@ for i in range(num_columns):
 ### USER-BASED RECOMMENDER
 st.write("### Based on what other people liked")
 
-userId = st.text_input("Log In with User ID:")
-
 if userId:
     top_n = get_top_n_for_user(p_dd, int(userId), n)
     for i in range(num_columns):
@@ -222,7 +220,7 @@ if userId:
         with locals()[f"col{i % num_columns}"]:
             st.write(top_n.loc[i, "title"])
             if pic_url:
-                st.image(pic_url)
+                st.image(pic_url, column_width=True)
             if pic_url is None:
                 st.write("no picture available")
 
