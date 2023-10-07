@@ -4,7 +4,7 @@ import numpy as num
 from PIL import Image
 import base64
 import streamlit as st
-import sklearn
+#import sklearn
 import requests
 from bs4 import BeautifulSoup
 import pickle
