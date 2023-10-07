@@ -209,7 +209,7 @@ if userId:
         if i % num_columns == 0:
             col0, col1, col2, col3, col4 = st.columns(5)
     
-        pic_path = f"C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/pic_db/{imdb}_pic.csv"
+        #pic_path = f"C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/pic_db/{imdb}_pic.csv"
 
         pic_url = extract_image_url(imdb)
     
