@@ -207,21 +207,32 @@ st.write("### Based on what other people liked")
 if userId:
     top_n = get_top_n_for_user(p_dd, int(userId), n)
     for i in range(num_columns):
-        imdb=top_n.loc[i, "imdbId"]
         if i % num_columns == 0:
-            col0, col1, col2, col3, col4 = st.columns(5)
+            columns = st.columns(num_columns)  # Create the specified number of columns
+    
+        pic_url = extract_image_url(imdb)
+        
+        with columns[i % num_columns]:
+            st.write(top_n.loc[i, "title"])
+            if pic_url:
+                st.image(pic_url, use_column_width=True)
+            else:
+                st.write("No picture available")
+        #imdb=top_n.loc[i, "imdbId"]
+        #if i % num_columns == 0:
+        #    col0, col1, col2, col3, col4 = st.columns(5)
     
         #pic_path = f"C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/pic_db/{imdb}_pic.csv"
 
-        pic_url = extract_image_url(imdb)
-         
+    #    pic_url = extract_image_url(imdb)
+    #     
 
-        with locals()[f"col{i % num_columns}"]:
-            st.write(top_n.loc[i, "title"])
-            if pic_url:
-                st.image(pic_url)
-            if pic_url is None:
-                st.write("no picture available")
+        #with locals()[f"col{i % num_columns}"]:
+        #    st.write(top_n.loc[i, "title"])
+        #    if pic_url:
+        #        st.image(pic_url)
+        #    if pic_url is None:
+        #        st.write("no picture available")
 
 
 
