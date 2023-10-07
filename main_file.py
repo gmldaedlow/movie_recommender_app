@@ -118,7 +118,7 @@ def get_top_n_for_user(p_dd, user_id, n=5):
 
 
 st.title("Movie rating :star:")  #:blue[star]
-st.write("### The popular movies")
+st.write("### Our most popular movies")
 
 
 st.markdown("---")
@@ -201,11 +201,11 @@ if userId:
          
 
         with locals()[f"col{i % num_columns}"]:
-            st.write(top_n.loc[i, "title"])
             if pic_url:
                 st.image(pic_url, use_column_width=True)
             if pic_url is None:
                 st.write("no picture available")
+        st.write(top_n.loc[i, "title"])
 
 
 
