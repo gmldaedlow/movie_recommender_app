@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 import pickle
 import fastparquet
 import dask.dataframe as dd
-from surprise import Reader, Dataset, KNNBasic, accuracy
-from surprise.model_selection import train_test_split
+#from surprise import Reader, Dataset, KNNBasic, accuracy
+#from surprise.model_selection import train_test_split
 
 
 # import data
