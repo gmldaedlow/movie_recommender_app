@@ -225,8 +225,8 @@ if userId:
             #st.image(pic_path=
         if pic_url is None:
             with locals()[f"col{i % num_columns}"]:
-            st.write(top_n.loc[i, "title"])
-            st.write("no picture available")
+                st.write(top_n.loc[i, "title"])
+                st.write("no picture available")
 
 
 
