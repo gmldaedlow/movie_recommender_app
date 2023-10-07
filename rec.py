@@ -8,7 +8,7 @@ import fastparquet
 import dask.dataframe as dd
 
 # import data
-links = pd.read_csv("links.csv")
+links = pd.read_csv("https://media.githubusercontent.com/media/gmldaedlow/movie_recommender_app/main/links.csv")
 movies = pd.read_csv("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/ml-latest-small/movies.csv")
 ratings = pd.read_csv("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/ml-latest-small/ratings.csv")
 tags = pd.read_csv("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/ml-latest-small/tags.csv")
