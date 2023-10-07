@@ -38,14 +38,12 @@ def extract_image_url(imdb_id):
     # First, try with the IMDb URL having "/tt00" in the link
     html_url = f"https://www.imdb.com/title/tt00{imdb_id}/"
     
-    #headers = {
-     #   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-    #}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+    }
     
     # Send an HTTP GET request to fetch the HTML content
-    response = requests.get(html_url#, 
-                            #headers=headers
-                             )
+    response = requests.get(html_url, headers=headers)
 
     # Check the response status code
     if response.status_code == 200:
@@ -96,6 +94,7 @@ def extract_image_url(imdb_id):
             return f"Fai1. Status code: {response.status_code}"
     else:
         return f"Fail2. Status code"
+
 
     
     
@@ -204,7 +203,7 @@ if userId:
         with locals()[f"col{i % num_columns}"]:
             st.write(top_n.loc[i, "title"])
             if pic_url:
-                st.image(pic_url)
+                st.image(pic_url, use_column_width=True)
             if pic_url is None:
                 st.write("no picture available")
 
