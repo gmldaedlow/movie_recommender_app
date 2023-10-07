@@ -6,6 +6,9 @@ from bs4 import BeautifulSoup
 import pickle
 import fastparquet
 import dask.dataframe as dd
+from surprise import Reader, Dataset, KNNBasic, accuracy
+from surprise.model_selection import train_test_split
+
 
 # import data
 links = pd.read_csv("./data1/links.csv")
@@ -17,7 +20,7 @@ tags = pd.read_csv("./data1/tags.csv")
 p_dd = dd.read_parquet("./data1/predictions.parquet")
 
 # import model
-loaded_model = pickle.load(open("./data1/knn_surprise_recommender.sav", 'rb'))
+#loaded_model = pickle.load(open("./data1/knn_surprise_recommender.sav", 'rb'))
 
 
 
