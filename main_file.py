@@ -13,33 +13,17 @@ import dask.dataframe as dd
 
 
 # import data
-
-url_links = "https://drive.google.com/file/d/1qoSPNulwSEgl-7hU0h6n2pq-ajfvysyS/view?usp=sharing"
-path_links = 'https://drive.google.com/uc?export=download&id='+url_links.split('/')[-2]
-links = pd.read_csv(path_links)
-
-
-url_movies = "https://drive.google.com/file/d/1_I8qM82wyV-ly5DKfVHvkAx5DItQSyeY/view?usp=sharing"
-path_movies = 'https://drive.google.com/uc?export=download&id='+url_movies.split('/')[-2]
-movies = pd.read_csv(path_movies)
-
-
-url_ratings = "https://drive.google.com/file/d/1wl7iibcSBR6WgsywPAX49rQTWsHscmg7/view?usp=sharing"
-path_ratings = 'https://drive.google.com/uc?export=download&id='+url_ratings.split('/')[-2]
-ratings = pd.read_csv(path_ratings)
-
-
-url_tags = "https://drive.google.com/file/d/1tFgO1Fm3MUxiLl_yWzWMx4a0Tw-u_1dD/view?usp=sharing"
-path_tags = 'https://drive.google.com/uc?export=download&id='+url_tags.split('/')[-2]
-tags = pd.read_csv(path_tags)
-
-
+links = pd.read_csv("./data1/links.csv")
+movies = pd.read_csv("./data1/movies.csv")
+ratings = pd.read_csv("./data1/ratings.csv")
+tags = pd.read_csv("./data1/tags.csv")
 
 # predictions: Read Parquet file using Dask
+p_dd = dd.read_parquet("./data1/predictions.parquet")
 
-url_p_dd = "https://drive.google.com/file/d/1klhMcNXheteL2kimms3ycZU-taQlC8y5/view?usp=sharing"
-path_p_dd = 'https://drive.google.com/uc?export=download&id='+url_p_dd.split('/')[-2]
-p_dd = dd.read_parquet(path_p_dd)
+
+
+
 
 
 # SETTINGS:
