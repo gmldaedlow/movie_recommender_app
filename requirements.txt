@@ -1,0 +1,6 @@
+beautifulsoup4==4.12.2
+dask==2023.9.3
+fastparquet==2023.8.0
+pandas==2.0.3
+Requests==2.31.0
+streamlit==1.27.0
