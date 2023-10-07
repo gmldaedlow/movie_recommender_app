@@ -217,15 +217,17 @@ if userId:
         #pic_path = f"C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/pic_db/{imdb}_pic.csv"
 
         pic_url = extract_image_url(imdb)
-    
-        # If extract_image_url returns None, try with the IMDb URL having "/tt0"
-        if pic_url is None:
-            pic_url = extract_image_url(imdb)
+         
 
         with locals()[f"col{i % num_columns}"]:
             st.write(top_n.loc[i, "title"])
             st.image(pic_url)
             #st.image(pic_path)
+
+        if pic_url is None:
+            with locals()[f"col{i % num_columns}"]:
+            st.write(top_n.loc[i, "title"])
+            st.write("no picture available")
 
 
 
