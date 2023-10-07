@@ -87,6 +87,7 @@ def extract_image_url(imdb_id):
             return pic_url
         else:
             return "Image URL not found on the page"
+            
     elif response.status_code == 404:
         # If the page is not found (404), try with the IMDb URL having "/tt0" in the link
         html_url = f"https://www.imdb.com/title/tt0{imdb_id}/"
@@ -101,11 +102,27 @@ def extract_image_url(imdb_id):
                 return pic_url
             else:
                 return "Image URL not found on the page"
+
+    elif response.status_code == 404:
+        # If the page is not found (404), try with the IMDb URL having "/tt0" in the link
+        html_url = f"https://www.imdb.com/title/tt{imdb_id}/"
+        response = requests.get(html_url, headers=headers)
+        
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, "html.parser")
+            meta_tag = soup.find("meta", {"property": "og:image"})
+
+            if meta_tag:
+                pic_url = meta_tag["content"]
+                return pic_url
+            else:
+                return "Image URL not found on the page"
+
+
         else:
             return f"Fai1. Status code: {response.status_code}"
     else:
-        return f"Fail2. Status code: {response.status_code}"
-
+        return f"Fail2. Status code"
 
 
 
@@ -207,10 +224,6 @@ if userId:
 
 ### ITEM-BASED RECOMMENDER
 st.write("### Based on what you saw before")
-
-
-
-
 
 
 
