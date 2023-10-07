@@ -128,7 +128,7 @@ import streamlit as st
 from PIL import Image
 from itertools import cycle
 
-filteredImages =  ['eternalsunshine.jpeg', 'fightclub.jpg', 'pulpfiction.jpg', 'leon.jpeg', 'emma.jpg', 'toystory.jpg', 'godfather.jpg', 'pitchperfect.jpg'] # your images here
+filteredImages =  ['./pics/eternalsunshine.jpg', './pics/fightclub.jpg', './pics/pulpfiction.jpg', './pics/leon.jpeg', './pics/emma.jpg', './pics/toystory.jpg', './pics/godfather.jpg', './pics/pitchperfect.jpg'] # your images here
 caption = ['[ID-7361] Eternal Sunshine of the Spotless Mind (2004)', '[ID-2959] Fight Club (1999)', '[ID-296] Pulp Fiction (1994)', '[ID-293] Léon: The Professional(1994)', '[ID-84847] Emma (2009)', '[ID-96588] Toy Story 2 (1999)', '[ID-858] Godfather, The (1972)', '[ID-3114] Pitch Perfect (2012)' ] # your caption here
 
 cols = cycle(st.columns(4)) # st.columns here since it is out of beta at the time I'm writing this
@@ -212,7 +212,8 @@ if userId:
 
 
 
-
+image = Image.open('./pics/cinema.jpg')
+st.image(image, caption='Have a nice watching')
 
 
 
