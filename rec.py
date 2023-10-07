@@ -205,6 +205,8 @@ for i in range(num_columns):
 ### USER-BASED RECOMMENDER
 st.write("### Based on what other people liked")
 
+userId = st.text_input("Log In with User ID:")
+
 if userId:
     top_n = get_top_n_for_user(p_dd, int(userId), n)
     for i in range(num_columns):
