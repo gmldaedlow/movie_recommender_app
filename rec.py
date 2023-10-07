@@ -219,9 +219,9 @@ if userId:
         pic_url = extract_image_url(imdb)
          
 
-            with locals()[f"col{i % num_columns}"]:
-                st.write(top_n.loc[i, "title"])
-                st.image(pic_url)
+        with locals()[f"col{i % num_columns}"]:
+            st.write(top_n.loc[i, "title"])
+            st.image(pic_url)
             #st.image(pic_path=
         if pic_url is None:
             with locals()[f"col{i % num_columns}"]:
