@@ -9,14 +9,15 @@ import dask.dataframe as dd
 
 # import data
 links = pd.read_csv("./data1/links.csv")
-movies = pd.read_csv("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/ml-latest-small/movies.csv")
-ratings = pd.read_csv("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/ml-latest-small/ratings.csv")
-tags = pd.read_csv("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/ml-latest-small/tags.csv")
+movies = pd.read_csv("./data1/movies.csv")
+ratings = pd.read_csv("./data1/ratings.csv")
+tags = pd.read_csv("./data1/tags.csv")
 
 # import model
 loaded_model = pickle.load(open("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/models/knn_surprise_recommender.sav", 'rb'))
+
 # predictions: Read Parquet file using Dask
-p_dd = dd.read_parquet("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/app/predictions.parquet")
+p_dd = dd.read_parquet("./data1/predictions.parquet")
 
 
 # SETTINGS:
