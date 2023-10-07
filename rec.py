@@ -14,7 +14,7 @@ ratings = pd.read_csv("./data1/ratings.csv")
 tags = pd.read_csv("./data1/tags.csv")
 
 # import model
-loaded_model = pickle.load(open("C:/Users/daedlow/Documents/jupyter_notebook/recommender_systems/models/knn_surprise_recommender.sav", 'rb'))
+loaded_model = pickle.load(open("./data1/knn_surprise_recommender.sav", 'rb'))
 
 # predictions: Read Parquet file using Dask
 p_dd = dd.read_parquet("./data1/predictions.parquet")
