@@ -182,6 +182,7 @@ blonde_top_10_correlation
 
 
 
+st.markdown("---")
 
 ### USER-BASED RECOMMENDER
 st.write("### Based on what other people liked")
@@ -205,7 +206,7 @@ if userId:
                 st.image(pic_url, use_column_width=True)
             if pic_url is None:
                 st.write("no picture available")
-        st.write(top_n.loc[i, "title"])
+            st.write(top_n.loc[i, "title"])
 
 
 
