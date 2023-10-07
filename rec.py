@@ -39,7 +39,6 @@ num_columns = 5
 # POPULARITY FUNCTION
 
 # getting 10 most popular titles
-st.cache_data
 def pub_rec(movies_df, ratings_df, links_df):
     df = pd.merge(movies_df,
         ratings_df, 
@@ -70,7 +69,6 @@ for i in range(5):
 
 
 # pub recommendations imdb pics
-st.cache_data
 def extract_image_url(imdb_id):
     # First, try with the IMDb URL having "/tt00" in the link
     html_url = f"https://www.imdb.com/title/tt00{imdb_id}/"
@@ -141,7 +139,6 @@ def extract_image_url(imdb_id):
 
 
 # SURPRISE DATA
-st.cache_data
 def get_top_n_for_user(p_dd, user_id, n=5):
     iids = []
     p = p_dd.loc[p_dd["uid"]==user_id,:].compute().sort_values(by="est", ascending=False)[0:n]
